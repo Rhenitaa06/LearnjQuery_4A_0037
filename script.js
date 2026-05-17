@@ -69,10 +69,8 @@ $("#btntambah").on("click", function() {
     });
 
     // Tombol Progress
-    btnProgress.innerHTML = "📖 Progress";
-    btnProgress.classList.add("btn-progress");
-    btnProgress.addEventListener("click", function() {
-        listbaru.className = "status-Progress";
+    btnProgress.on("click", function() {
+        listbaru.attr("class", "status-Progress");
     });
 
     // Tombol Done
