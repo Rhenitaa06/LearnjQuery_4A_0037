@@ -62,9 +62,7 @@ $("#btntambah").on("click", function() {
     }); 
 
     // Tombol Hapus
-    btnHapus.innerHTML = "🗑️ Hapus";
-    btnHapus.classList.add("btn-hapus");
-    btnHapus.addEventListener("click", function() {
+    btnHapus.on("click", function() {
         if (confirm("Yakin ingin menghapus tugas ini?")) {
             listbaru.remove();
         }
