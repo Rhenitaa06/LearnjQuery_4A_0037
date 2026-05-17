@@ -45,18 +45,19 @@ $("#btntambah").on("click", function() {
 
         btnProgress.before(inputEdit, inputTglEdit, btnSimpan);
 
-        btnSimpan.addEventListener("click", function() {
-            spanbaru.innerHTML    = inputEdit.value;
-            spanTanggal.innerHTML = inputTglEdit.value ? ": " + inputTglEdit.value : "";
+    // Tombol Simpan
+    btnSimpan.on("click", function() {
+            spanbaru.text(inputEdit.val());
+            spanTanggal.text(inputTglEdit.val() ? ": " + inputTglEdit.val() : "");
 
-            spanbaru.style.display    = "";
-            spanTanggal.style.display = "";
-            btnEdit.style.display     = "";
+            spanbaru.show();
+            spanTanggal.show();
+            btnEdit.show();
 
             inputEdit.remove();
             inputTglEdit.remove();
             btnSimpan.remove();
-        });
+    });
 
     }); 
 
