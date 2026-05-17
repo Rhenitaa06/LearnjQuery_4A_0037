@@ -3,14 +3,16 @@ const inputTanggal = $("#inputTanggal");
 const btntambah    = $("#btnTambah");
 const daftarTugas  = $("#daftarTugas");
 
-btntambah.addEventListener("click", function() {
-    let teksTugas = inputTugas.value;
-    let tanggal   = inputTanggal.value;
+$("#btntambah").on("click", function() {
+    let teksTugas = $inputTugas.val();
+    let tanggal   = $inputTanggal.val();
 
     if (teksTugas === "") {
         alert("Data harus dimasukkan!");
         return;
     }
+
+    
 
     let listbaru    = document.createElement("li");
     let spanbaru    = document.createElement("span");
