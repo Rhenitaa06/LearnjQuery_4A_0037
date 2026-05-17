@@ -30,35 +30,20 @@ $("#btntambah").on("click", function() {
     let btnEdit     = listbaru.find(".btn-edit");
     let btnHapus    = listbaru.find(".btn-hapus");
 
-    spanbaru.innerHTML    = teksTugas;
-    spanTanggal.innerHTML = tanggal ? ": " + tanggal : "";
-
     // Tombol Edit
-    btnEdit.innerHTML = "✏️ Edit";
-    btnEdit.classList.add("btn-edit");
-    btnEdit.addEventListener("click", function() {
-        let teksLama    = spanbaru.innerHTML;
-        let tanggalLama = spanTanggal.innerHTML.replace(": ", "");
+    btnEdit.on("click", function() {
+        let teksLama    = spanbaru.text();
+        let tanggalLama = spanTanggal.text().replace(": ", "");
 
-        let inputEdit    = document.createElement("input");
-        let inputTglEdit = document.createElement("input");
-        let btnSimpan    = document.createElement("button");
-        
-        inputEdit.type     = "text";
-        inputEdit.value    = teksLama;
-        inputTglEdit.type  = "date";
-        inputTglEdit.value = tanggalLama;
+        let inputEdit    = $("<input>").attr("type", "text").val(teksLama);
+        let inputTglEdit = $("<input>").attr("type", "date").val(tanggalLama);
+        let btnSimpan    = $("<button>").text("💾 Simpan").addClass("btn-simpan");
 
-        btnSimpan.innerHTML = "💾 Simpan";
-        btnSimpan.classList.add("btn-simpan");
+        spanbaru.hide();
+        spanTanggal.hide();
+        btnEdit.hide();
 
-        spanbaru.style.display    = "none";
-        spanTanggal.style.display = "none";
-        btnEdit.style.display     = "none";
-
-        listbaru.insertBefore(inputEdit, btnProgress);
-        listbaru.insertBefore(inputTglEdit, btnProgress);
-        listbaru.insertBefore(btnSimpan, btnProgress);
+        btnProgress.before(inputEdit, inputTglEdit, btnSimpan);
 
         btnSimpan.addEventListener("click", function() {
             spanbaru.innerHTML    = inputEdit.value;
