@@ -74,10 +74,8 @@ $("#btntambah").on("click", function() {
     });
 
     // Tombol Done
-    btnDone.innerHTML = "✅ Done";
-    btnDone.classList.add("btn-done");
-    btnDone.addEventListener("click", function() {
-        listbaru.className = "status-Done";
+    btnDone.on("click", function() {
+        listbaru.attr("class", "status-Done");
     });
 
     listbaru.appendChild(spanbaru);
