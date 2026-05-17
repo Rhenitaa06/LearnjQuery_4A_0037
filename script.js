@@ -12,15 +12,23 @@ $("#btntambah").on("click", function() {
         return;
     }
 
-    
+    let listbaru = $(`
+    <li>
+        <span class="teks-tugas">${teksTugas}</span>
+        <span class="teks-tanggal">${tanggal ? ": " + tanggal : ""}</span>
+        <button class="btn-progress">📖 Progress</button>
+        <button class="btn-done">✅ Done</button>
+        <button class="btn-edit">✏️ Edit</button>
+        <button class="btn-hapus">🗑️ Hapus</button>
+    </li>
+    `);
 
-    let listbaru    = document.createElement("li");
-    let spanbaru    = document.createElement("span");
-    let spanTanggal = document.createElement("span");
-    let btnProgress = document.createElement("button");
-    let btnDone     = document.createElement("button");
-    let btnHapus    = document.createElement("button");
-    let btnEdit     = document.createElement("button");
+    let spanbaru    = listbaru.find(".teks-tugas");
+    let spanTanggal = listbaru.find(".teks-tanggal");
+    let btnProgress = listbaru.find(".btn-progress");
+    let btnDone     = listbaru.find(".btn-done");
+    let btnEdit     = listbaru.find(".btn-edit");
+    let btnHapus    = listbaru.find(".btn-hapus");
 
     spanbaru.innerHTML    = teksTugas;
     spanTanggal.innerHTML = tanggal ? ": " + tanggal : "";
