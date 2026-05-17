@@ -3,9 +3,9 @@ const inputTanggal = $("#inputTanggal");
 const btntambah    = $("#btnTambah");
 const daftarTugas  = $("#daftarTugas");
 
-$("#btntambah").on("click", function() {
-    let teksTugas = $inputTugas.val();
-    let tanggal   = $inputTanggal.val();
+$("#btnTambah").on("click", function() {
+    let teksTugas = inputTugas.val();
+    let tanggal   = inputTanggal.val();
 
     if (teksTugas === "") {
         alert("Data harus dimasukkan!");
@@ -78,14 +78,8 @@ $("#btntambah").on("click", function() {
         listbaru.attr("class", "status-Done");
     });
 
-    listbaru.appendChild(spanbaru);
-    listbaru.appendChild(spanTanggal);
-    listbaru.appendChild(btnProgress);
-    listbaru.appendChild(btnDone);
-    listbaru.appendChild(btnEdit);
-    listbaru.appendChild(btnHapus);
-    daftarTugas.appendChild(listbaru);
+    daftarTugas.append(listbaru);
 
-    inputTugas.value   = "";
-    inputTanggal.value = "";
+    inputTugas.val("");
+    inputTanggal.val("");
 }); 
