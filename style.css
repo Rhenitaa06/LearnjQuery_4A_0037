@@ -1,0 +1,101 @@
+body {
+  background: #bdc8cc;
+}
+
+h1 {
+    text-align: center;
+    color: #191263;
+
+}
+
+.form {
+    display: flex;
+    gap: 8px;
+}
+
+input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    background: #4338ca;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #26206a;
+}
+
+li {
+    margin-top: 10px;
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-progress {
+    background: #4338ca;
+    padding: 10px;
+    gap: 2px;
+}
+
+.btn-progress:hover {
+    background: #f59e0b;
+}
+
+.status-Progress {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    color: #b45309;
+}
+
+.btn-done {
+    background: #4338ca;
+    padding: 10px;
+    gap: 2px;
+}
+
+.btn-done:hover {
+    background: #10b981;
+}
+
+.status-Done {
+    background: #d1fae5;
+    border-left: 4px solid #10b981;
+    color: #0b7132;
+}
+
+.btn-edit {
+    background: #4338ca;
+    padding: 10px;
+    gap: 2px;
+}
+
+.btn-edit:hover {
+    background: #b67ac0;
+}
+
+.btn-hapus {
+    background: #4338ca;
+    padding: 10px;
+    gap: 2px;
+}
+
+.btn-hapus:hover {
+    background: #b91010;
+}
+
+.btn-simpan {
+    background: #4338ca;
+    padding: 10px;
+    gap: 2px;
+}
